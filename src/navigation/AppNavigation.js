@@ -1,7 +1,5 @@
 import Login from '../containers/Login';
 import Home from '../containers/Home';
-import Chat from '../containers/Chat';
-import Favorite from '../containers/Favorite';
 import Notification from '../containers/Notification';
 import Profile from '../containers/Profile';
 import {createAppContainer} from 'react-navigation';
@@ -20,16 +18,15 @@ const AppNavigator = createStackNavigator(
         {
           Home: {screen: Home},
           Search: {screen: Search},
-          Chat: {screen: Chat},
-          Favorite: {screen: Favorite},
           Notification: {screen: Notification},
           Profile: {screen: Profile},
         },
         {
           defaultNavigationOptions: ({navigation}) => ({}),
           tabBarOptions: {
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            activeTintColor: 'gray',
+            inactiveTintColor: 'tomato',
+            activeBackgroundColor: 'tomato',
           },
         },
       ),
