@@ -3,15 +3,15 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   movieContainer: {
     backgroundColor: 'gray',
-    borderColor: 'black',
-    borderWidth: 2,
-    height: 200,
+    borderColor: 'tomato',
+    borderWidth: 1,
     width: 200,
     marginLeft: 10,
   },
   movieTitle: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: 'bold',
     backgroundColor: 'rgba(100, 100, 100, 0.7)',
   },
+  imageStyle: {width: '100%', height: '100%'},
 });

@@ -16,7 +16,7 @@ class Movie extends React.PureComponent {
               'https://image.tmdb.org/t/p/original/' +
               this.props.item.poster_path,
           }}
-          style={{width: '100%', height: '100%'}}>
+          style={styles.imageStyle}>
           <Text style={styles.movieTitle}>
             {this.props.item.original_title}
           </Text>

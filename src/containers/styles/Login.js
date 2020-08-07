@@ -2,6 +2,8 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: 'gray',
     paddingHorizontal: 20,
     paddingVertical: 50,
   },
@@ -22,9 +24,9 @@ export default StyleSheet.create({
   },
   textInput: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: 'black',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 20,
   },
   confirmPw: {
     marginBottom: 30,

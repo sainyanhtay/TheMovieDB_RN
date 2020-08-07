@@ -9,7 +9,7 @@ import {
 import styles from './styles/Login';
 import {submitSignUp, checkLoggedIn} from '../ducks/login/LoginActions';
 import {connect} from 'react-redux';
-import {StackActions, NavigationActions} from 'react-navigation';
+import {Actions} from 'react-native-router-flux';
 
 class Login extends Component {
   constructor(props) {
@@ -33,13 +33,13 @@ class Login extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    console.log('shout', nextProps, this.props);
     if (
       this.props.email == '' &&
       nextProps.email != '' &&
       nextProps.email != undefined
     ) {
-      //logged in situation
+      // logged in situation
+      // Actions.reset('Home');
       const resetAction = StackActions.reset({
         index: 0,
         actions: [NavigationActions.navigate({routeName: 'Home'})],
@@ -182,7 +182,10 @@ class Login extends Component {
           Already have an account?{' '}
           <Text
             style={{color: 'blue'}}
-            onPress={() => this.props.navigation.navigate({routeName: 'Home'})}>
+            onPress={() => {
+              // Actions.home();
+              this.props.navigation.navigate({routeName: 'Home'});
+            }}>
             Login
           </Text>
         </Text>
@@ -196,6 +199,9 @@ const mapStateToProps = state => {
   return {fullName, email, password};
 };
 
-Login = connect(mapStateToProps, {submitSignUp, checkLoggedIn})(Login);
+Login = connect(
+  mapStateToProps,
+  {submitSignUp, checkLoggedIn},
+)(Login);
 
 export default Login;
