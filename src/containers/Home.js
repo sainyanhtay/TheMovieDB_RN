@@ -45,10 +45,15 @@ class Home extends Component {
         key={item.id}
         item={item}
         index={index}
-        // onPressDetail={index => this.onPressDetail(item)}
+        onPressDetail={item => this.onPressDetail(item)}
       />
     );
   }
+
+  onPressDetail = movie => {
+    this.props.navigation.navigate({routeName: 'MovieDetail', params: movie});
+  };
+
   render() {
     return (
       <View style={styles.container}>

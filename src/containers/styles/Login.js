@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gray',
+    // backgroundColor: 'gray',
     paddingHorizontal: 20,
     paddingVertical: 50,
   },
@@ -31,11 +31,25 @@ export default StyleSheet.create({
   confirmPw: {
     marginBottom: 30,
   },
-  signUpButton: {},
+  signUpButton: {
+    paddingVertical: 10,
+    backgroundColor: 'gray',
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: '#000',
+  },
+  submitText: {
+    color: '#000',
+    fontSize: 15,
+    textAlign: 'center',
+  },
   login: {
     fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
     paddingVertical: 10,
+  },
+  linearGradient: {
+    flex: 1,
   },
 });
