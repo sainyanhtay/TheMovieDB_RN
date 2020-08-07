@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, TouchableOpacity} from 'react-native';
 import styles from './styles/Movie';
 
 class Movie extends React.PureComponent {
@@ -9,19 +9,21 @@ class Movie extends React.PureComponent {
 
   render() {
     return (
-      <View style={styles.movieContainer}>
+      <TouchableOpacity
+        style={styles.movieContainer}
+        onPress={() => this.props.onPressDetail(this.props.item)}>
         <ImageBackground
           source={{
-            uri:
-              'https://image.tmdb.org/t/p/original/' +
-              this.props.item.poster_path,
+            uri: `https://image.tmdb.org/t/p/original/${
+              this.props.item.poster_path
+            }`,
           }}
-          style={{width: '100%', height: '100%'}}>
+          style={styles.imageStyle}>
           <Text style={styles.movieTitle}>
             {this.props.item.original_title}
           </Text>
         </ImageBackground>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
