@@ -2,6 +2,7 @@ import Login from '../containers/Login';
 import Home from '../containers/Home';
 import Notification from '../containers/Notification';
 import Profile from '../containers/Profile';
+import MovieDetail from '../containers/MovieDetail';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -13,6 +14,7 @@ const AppNavigator = createStackNavigator(
     Login: {
       screen: Login,
     },
+    MovieDetail: {screen: MovieDetail},
     Home: {
       screen: createBottomTabNavigator(
         {
