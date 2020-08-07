@@ -18,6 +18,17 @@ class Home extends Component {
   static navigationOptions = ({navigation}) => {
     const {state} = navigation;
     return {
+      title: 'Home',
+      header: props => (
+        <View>
+          <Text>Home</Text>
+        </View>
+      ),
+      headerStyle: {
+        backgroundColor: '#ff0000',
+        elevation: 0, //hide navbar line
+      },
+      headerTintColor: '#ff0000',
       tabBarIcon: ({focused, tintColor}) => (
         <View>
           <Icon name="ios-home" color={tintColor} size={25} />
@@ -45,15 +56,10 @@ class Home extends Component {
         key={item.id}
         item={item}
         index={index}
-        onPressDetail={item => this.onPressDetail(item)}
+        // onPressDetail={index => this.onPressDetail(item)}
       />
     );
   }
-
-  onPressDetail = movie => {
-    this.props.navigation.navigate({routeName: 'MovieDetail', params: movie});
-  };
-
   render() {
     return (
       <View style={styles.container}>
@@ -81,9 +87,6 @@ const mapStateToProps = state => {
   return {latestMovies, popularMovies, isLoading};
 };
 
-Home = connect(
-  mapStateToProps,
-  {retrieveLatest, retrievePopular},
-)(Home);
+Home = connect(mapStateToProps, {retrieveLatest, retrievePopular})(Home);
 
 export default Home;
