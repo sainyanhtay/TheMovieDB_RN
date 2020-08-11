@@ -3,6 +3,7 @@ import {
   RETRIEVE_LATEST_SUCCESS,
   RETRIEVE_LATEST_FAILED,
   RETRIEVE_POPULAR_SUCCESS,
+  RETRIEVE_SIMILAR_SUCCESS,
   RETRIEVE_SEARCH_SUCCESS,
 } from './HomeTypes';
 
@@ -10,6 +11,7 @@ const INITIAL_STATE = {
   isLoading: false,
   latestMovies: {},
   popularMovies: {},
+  similarMovies: {},
   searchResult: {},
 };
 export default (state = INITIAL_STATE, action) => {
@@ -21,8 +23,10 @@ export default (state = INITIAL_STATE, action) => {
     case RETRIEVE_LATEST_FAILED:
       return {...state, isLoading: false};
     case RETRIEVE_POPULAR_SUCCESS: {
-      console.log('action', action);
       return {...state, popularMovies: action.payload};
+    }
+    case RETRIEVE_SIMILAR_SUCCESS: {
+      return {...state, similarMovies: action.payload};
     }
     case RETRIEVE_SEARCH_SUCCESS: {
       return {...state, searchResult: action.payload};

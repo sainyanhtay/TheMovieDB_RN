@@ -2,12 +2,13 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'gray',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    
   },
   label: {
     fontWeight: 'bold',
-    paddingVertical: 3,
     fontSize: 25,
+    color: 'white'
   },
 });

@@ -3,19 +3,26 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   movieContainer: {
     backgroundColor: 'gray',
-    borderColor: 'tomato',
-    borderWidth: 1,
-    width: 200,
-    marginLeft: 10,
-    borderRadius: 30,
-    overflow: 'hidden',
-    elevation: 10,
+    borderColor: 'black',
+    borderWidth: 2,
+    height: 180,
+    width: 100,
+    marginLeft: 5,
+  },
+  titleContainer: {
+    backgroundColor: 'black',
+    borderColor: 'black',
+    borderWidth: 2,
+    height: 40,
+    width: 100,
+    marginLeft: 5,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   movieTitle: {
-    fontSize: 15,
+    fontSize: 10,
     fontWeight: 'bold',
-    backgroundColor: 'rgba(100, 100, 100, 0.7)',
-    textAlign: 'center',
+    color: 'white',
+    backgroundColor: 'black',
   },
-  imageStyle: {width: '100%', height: '100%'},
 });
