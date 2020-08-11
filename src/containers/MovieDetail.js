@@ -13,8 +13,7 @@ class MovieDetail extends Component {
 
   render() {
     const {params} = this.props.navigation.state;
-    console.log('check', this.props.navigation.state.params);
-
+    
     return (
       <LinearGradient
         colors={['#ff6347', '#e83f20', '#360a02']}
