@@ -3,7 +3,6 @@ import {call, put, select, takeLatest} from 'redux-saga/effects';
 import {
   retrieveLatestMovies,
   retrievePopularMovies,
-  retrieveSimilarMovies,
   searchMovies,
 } from './HomeServices';
 import * as types from './HomeTypes';
@@ -34,19 +33,6 @@ export function* retrievePopular() {
   }
 }
 
-export function* retrieveSimilar(action) {
-  try {
-    const similarMovies = yield call(retrieveSimilarMovies, action.payload);
-    yield put({
-      type: types.RETRIEVE_SIMILAR_SUCCESS,
-      payload: similarMovies,
-    });
-  } catch (e) {
-    console.log(e);
-    yield put({type: types.RETRIEVE_SIMILAR_FAILED, payload: e.message});
-  }
-}
-
 export function* retrieveSearch(action) {
   try {
     const searchResult = yield call(searchMovies, action.payload);
@@ -63,6 +49,5 @@ export function* retrieveSearch(action) {
 export default function* watchHomeSaga() {
   yield takeLatest(types.RETRIEVE_LATEST, retrieveLatest);
   yield takeLatest(types.RETRIEVE_POPULAR, retrievePopular);
-  yield takeLatest(types.RETRIEVE_SIMILAR, retrieveSimilar);
   yield takeLatest(types.RETRIEVE_SEARCH, retrieveSearch);
 }

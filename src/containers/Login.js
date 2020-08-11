@@ -5,11 +5,13 @@ import {
   TextInput,
   Button,
   KeyboardAvoidingView,
+  TouchableOpacity,
 } from 'react-native';
 import styles from './styles/Login';
 import {submitSignUp, checkLoggedIn} from '../ducks/login/LoginActions';
 import {connect} from 'react-redux';
-import {StackActions, NavigationActions} from 'react-navigation';
+import {Actions} from 'react-native-router-flux';
+import LinearGradient from 'react-native-linear-gradient';
 
 class Login extends Component {
   constructor(props) {
@@ -33,13 +35,13 @@ class Login extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    // console.log('shout', nextProps, this.props);
     if (
       this.props.email == '' &&
       nextProps.email != '' &&
       nextProps.email != undefined
     ) {
-      //logged in situation
+      // logged in situation
+      // Actions.reset('Home');
       const resetAction = StackActions.reset({
         index: 0,
         actions: [NavigationActions.navigate({routeName: 'Home'})],
@@ -120,73 +122,82 @@ class Login extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container}>
-        <Text style={styles.signUp}> Sign Up </Text>
-        <Text style={styles.label}> Fullname </Text>
-        <TextInput
-          style={
-            this.state.validatefullName ? styles.warnInput : styles.textInput
-          }
-          underlineColorAndroid={this.state.validatefullName ? 'red' : 'gray'}
-          onChangeText={value => {
-            this.state.signUpData.fullName = value;
-          }}
-        />
-
-        <Text style={styles.label}>Email</Text>
-        <TextInput
-          style={this.state.validateEmail ? styles.warnInput : styles.textInput}
-          underlineColorAndroid={this.state.validateEmail ? 'red' : 'gray'}
-          onChangeText={value => {
-            this.state.signUpData.email = value;
-          }}
-        />
-
-        <Text style={styles.label}> Password </Text>
-        <TextInput
-          secureTextEntry={true}
-          style={
-            this.state.validatepassword ? styles.warnInput : styles.textInput
-          }
-          underlineColorAndroid={this.state.validatepassword ? 'red' : 'gray'}
-          onChangeText={value => {
-            this.state.signUpData.password = value;
-          }}
-        />
-
-        <Text style={styles.label}> Confirm Password </Text>
-        <TextInput
-          secureTextEntry={true}
-          style={[
-            styles.confirmPw,
-            this.state.validateconfirmedPassword
-              ? styles.warnInput
-              : styles.textInput,
-          ]}
-          underlineColorAndroid={
-            this.state.validateconfirmedPassword ? 'red' : 'gray'
-          }
-          onChangeText={value => {
-            this.state.signUpData.confirmedPassword = value;
-          }}
-        />
-
-        <Button
-          style={styles.signUpButton}
-          color="#ff0000"
-          title="Sign Up"
-          onPress={() => this.submit()}
-        />
-
-        <Text style={styles.login}>
-          Already have an account?{' '}
-          <Text
-            style={{color: 'blue'}}
-            onPress={() => this.props.navigation.navigate({routeName: 'Home'})}>
-            Login
+      <LinearGradient
+        colors={['#ff6347', '#e83f20', '#360a02']}
+        style={styles.linearGradient}>
+        <KeyboardAvoidingView style={styles.container}>
+          <Text style={styles.signUp}> Sign Up </Text>
+          <Text style={styles.label}> Fullname </Text>
+          <TextInput
+            style={
+              this.state.validatefullName ? styles.warnInput : styles.textInput
+            }
+            underlineColorAndroid={
+              this.state.validatefullName ? 'red' : 'transparent'
+            }
+            onChangeText={value => {
+              this.state.signUpData.fullName = value;
+            }}
+          />
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={
+              this.state.validateEmail ? styles.warnInput : styles.textInput
+            }
+            underlineColorAndroid={
+              this.state.validateEmail ? 'red' : 'transparent'
+            }
+            onChangeText={value => {
+              this.state.signUpData.email = value;
+            }}
+          />
+          <Text style={styles.label}> Password </Text>
+          <TextInput
+            secureTextEntry={true}
+            style={
+              this.state.validatepassword ? styles.warnInput : styles.textInput
+            }
+            underlineColorAndroid={
+              this.state.validatepassword ? 'red' : 'transparent'
+            }
+            onChangeText={value => {
+              this.state.signUpData.password = value;
+            }}
+          />
+          <Text style={styles.label}> Confirm Password </Text>
+          <TextInput
+            secureTextEntry={true}
+            style={[
+              styles.confirmPw,
+              this.state.validateconfirmedPassword
+                ? styles.warnInput
+                : styles.textInput,
+            ]}
+            underlineColorAndroid={
+              this.state.validateconfirmedPassword ? 'red' : 'transparent'
+            }
+            onChangeText={value => {
+              this.state.signUpData.confirmedPassword = value;
+            }}
+          />
+          <TouchableOpacity
+            style={styles.signUpButton}
+            onPress={() => this.submit()}>
+            <Text style={styles.submitText}>Sign Up</Text>
+          </TouchableOpacity>
+          <Text style={styles.login}>
+            Already have an account?{' '}
+            <Text
+              style={{color: 'tomato'}}
+              onPress={() => {
+                // Actions.home();
+                this.props.navigation.navigate({routeName: 'Home'});
+              }}>
+              Login
+            </Text>
           </Text>
-        </Text>
-      </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
+      </LinearGradient>
     );
   }
 }

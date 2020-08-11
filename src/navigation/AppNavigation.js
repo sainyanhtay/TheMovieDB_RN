@@ -1,10 +1,8 @@
 import Login from '../containers/Login';
 import Home from '../containers/Home';
-import MovieDetail from '../containers/MovieDetail';
-import Chat from '../containers/Chat';
-import Favorite from '../containers/Favorite';
 import Notification from '../containers/Notification';
 import Profile from '../containers/Profile';
+import MovieDetail from '../containers/MovieDetail';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -16,24 +14,21 @@ const AppNavigator = createStackNavigator(
     Login: {
       screen: Login,
     },
-    MovieDetail: {
-      screen: MovieDetail,
-    },
+    MovieDetail: {screen: MovieDetail},
     Home: {
       screen: createBottomTabNavigator(
         {
           Home: {screen: Home},
           Search: {screen: Search},
-          Chat: {screen: Chat},
-          Favorite: {screen: Favorite},
           Notification: {screen: Notification},
           Profile: {screen: Profile},
         },
         {
           defaultNavigationOptions: ({navigation}) => ({}),
           tabBarOptions: {
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            activeTintColor: 'gray',
+            inactiveTintColor: 'tomato',
+            activeBackgroundColor: 'tomato',
           },
         },
       ),

@@ -19,17 +19,6 @@ export function retrievePopularMovies() {
     });
 }
 
-export function retrieveSimilarMovies(id) {
-  let url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=xxxxxx&language=en-US&page=1`;
-  return API.get(url)
-    .then(response => {
-      return response.data;
-    })
-    .catch(function(error) {
-      throw error;
-    });
-}
-
 export function searchMovies(key) {
   let url =
     'https://api.themoviedb.org/3/search/movie?api_key=xxxxxx&language=en-US&query=' +

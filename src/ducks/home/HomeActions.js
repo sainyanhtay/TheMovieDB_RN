@@ -1,4 +1,4 @@
-import {RETRIEVE_LATEST, RETRIEVE_POPULAR, RETRIEVE_SIMILAR, RETRIEVE_SEARCH} from './HomeTypes';
+import {RETRIEVE_LATEST, RETRIEVE_POPULAR, RETRIEVE_SEARCH} from './HomeTypes';
 
 export const retrieveLatest = () => {
   return {
@@ -9,13 +9,6 @@ export const retrieveLatest = () => {
 export const retrievePopular = () => {
   return {
     type: RETRIEVE_POPULAR,
-  };
-};
-
-export const retrieveSimilar = (id) => {
-  return {
-    type: RETRIEVE_SIMILAR,
-    payload:id
   };
 };
 
