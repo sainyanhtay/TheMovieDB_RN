@@ -7,6 +7,7 @@ export default StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
+    paddingVertical: 3,
     fontSize: 25,
   },
 });

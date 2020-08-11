@@ -9,6 +9,7 @@ export default StyleSheet.create({
     marginLeft: 10,
     borderRadius: 30,
     overflow: 'hidden',
+    elevation: 10,
   },
   movieTitle: {
     fontSize: 15,
