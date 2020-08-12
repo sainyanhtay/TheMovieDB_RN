@@ -1,0 +1,20 @@
+{
+    "content": {
+        "body": [{
+                "_uid": "BUY6Drn9e1",
+                "component": "TextInput",
+                "headline": "TextInput"
+            },
+            {
+                "_uid": "gJZoSLkfZV",
+                "component": "Button",
+                "title": "Button"
+            },
+            {
+                "_uid": "X1JAfdsZxy",
+                "component": "foo",
+                "headline": "Another headline"
+            }
+        ]
+    }
+}

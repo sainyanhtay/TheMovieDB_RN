@@ -1,6 +1,6 @@
 import Login from '../containers/Login';
 import Home from '../containers/Home';
-import Notification from '../containers/Notification';
+import StudentForm from '../containers/StudentForm';
 import Profile from '../containers/Profile';
 import MovieDetail from '../containers/MovieDetail';
 import {createAppContainer} from 'react-navigation';
@@ -20,7 +20,7 @@ const AppNavigator = createStackNavigator(
         {
           Home: {screen: Home},
           Search: {screen: Search},
-          Notification: {screen: Notification},
+          StudentForm: {screen: StudentForm},
           Profile: {screen: Profile},
         },
         {
