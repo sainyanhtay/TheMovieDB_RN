@@ -7,9 +7,16 @@ class Buttons extends React.PureComponent {
   }
 
   render() {
+    let {component} = this.props;
     return (
       <ThemeProvider>
-        <Button title="Hey!" />
+        <Button
+          type={component.componentData.buttonType}
+          title={component.componentData.buttonName}
+          onPress={() =>
+            this.props.bindValue(component.componentData.buttonAction)
+          }
+        />
       </ThemeProvider>
     );
   }

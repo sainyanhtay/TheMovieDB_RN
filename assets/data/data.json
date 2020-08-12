@@ -8,13 +8,68 @@
                     "fieldName": "Name",
                     "placeholder": "Mg Mg",
                     "fieldValue": "name"
-                },
-                "headline": "TextInput"
+                }
+            },
+            {
+                "_uid": "BUY6Drn9e2",
+                "componentType": "TextInput",
+                "componentData": {
+                    "fieldName": "Father Name",
+                    "placeholder": "U Ba",
+                    "fieldValue": "name"
+                }
+            }, {
+                "_uid": "BUY6Drn9e3",
+                "componentType": "TextInput",
+                "componentData": {
+                    "fieldName": "Postal Address",
+                    "placeholder": "Yangon",
+                    "fieldValue": "name"
+                }
+            }, {
+                "_uid": "BUY6Drn9e4",
+                "componentType": "TextInput",
+                "componentData": {
+                    "fieldName": "Personal Address",
+                    "placeholder": "Yangon",
+                    "fieldValue": "name"
+                }
+            },
+            {
+                "_uid": "rn9Y6DBUe4",
+                "componentType": "ButtonsGroup",
+                "componentData": {
+                    "fieldName": "Sex",
+                    "buttons": ["Male", "Female"],
+                    "fieldValue": "gender"
+                }
+            },
+            {
+                "_uid": "n9Ye46DBrU",
+                "componentType": "DropDown",
+                "componentData": {
+                    "fieldName": "Course",
+                    "fieldItems": ["Grade 10", "Grade 9"],
+                    "fieldValue": "course"
+                }
+            },
+            {
+                "_uid": "gSLkfZJZoV",
+                "componentType": "Buttons",
+                "componentData": {
+                    "buttonName": "Reset",
+                    "buttonAction": "reset",
+                    "buttonType": "clear"
+                }
             },
             {
                 "_uid": "gJZoSLkfZV",
                 "componentType": "Buttons",
-                "title": "Button"
+                "componentData": {
+                    "buttonName": "Submit",
+                    "buttonAction": "submit",
+                    "buttonType": "solid"
+                }
             },
             {
                 "_uid": "X1JAfdsZxy",

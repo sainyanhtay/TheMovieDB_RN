@@ -2,13 +2,8 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Data from '../../assets/data/data.json';
-import TextInput from '../components/TextInput';
-import Buttons from '../components/Buttons';
-
-const Components = {
-  TextInput,
-  Buttons,
-};
+import {Components} from '../components';
+import styles from './styles/Search';
 
 class StudentForm extends Component {
   static navigationOptions = {
@@ -23,11 +18,15 @@ class StudentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      student: {
-        name: '',
-      },
+      name: '',
+      gender: '',
+      course: '',
     };
   }
+
+  buttonAction = value => {
+    console.log('buttonAction', value);
+  };
 
   dynamicRender = component => {
     if (typeof Components[component.componentType] !== 'undefined') {
@@ -35,9 +34,11 @@ class StudentForm extends Component {
         key: component._uid,
         component,
         bindValue: value => {
-          this.setState({
-            [component.componentData.fieldValue]: value,
-          });
+          if (component.componentType === 'Buttons') this.buttonAction(value);
+          else
+            this.setState({
+              [component.componentData.fieldValue]: value,
+            });
         },
       });
     }
@@ -52,7 +53,9 @@ class StudentForm extends Component {
     console.log('check', this.state);
     return (
       <View>
-        <Text> {Data.form.formName} </Text>
+        <View style={styles.title}>
+          <Text style={styles.titletext}> {Data.form.formName} </Text>
+        </View>
         {Data.form.body.map(component => this.dynamicRender(component))}
       </View>
     );
