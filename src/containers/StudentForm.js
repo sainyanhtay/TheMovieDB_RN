@@ -20,12 +20,25 @@ class StudentForm extends Component {
     ),
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      student: {
+        name: '',
+      },
+    };
+  }
+
   dynamicRender = component => {
     if (typeof Components[component.componentType] !== 'undefined') {
       return React.createElement(Components[component.componentType], {
         key: component._uid,
         component,
-        bindValue: '',
+        bindValue: value => {
+          this.setState({
+            [component.componentData.fieldValue]: value,
+          });
+        },
       });
     }
     return (
@@ -36,6 +49,7 @@ class StudentForm extends Component {
   };
 
   render() {
+    console.log('check', this.state);
     return (
       <View>
         <Text> {Data.form.formName} </Text>

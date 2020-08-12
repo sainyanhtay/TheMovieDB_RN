@@ -8,13 +8,12 @@ class TextInput extends React.PureComponent {
   }
 
   render() {
-    let {component, bindValue} = this.props;
-    console.log('check', component);
+    let {component} = this.props;
     return (
       <Input
         label={component.componentData.fieldName}
         placeholder={component.componentData.placeholder}
-        onChangeText={value => (bindValue = value)}
+        onChangeText={value => this.props.bindValue(value)}
       />
     );
   }
