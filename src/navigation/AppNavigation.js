@@ -11,7 +11,7 @@ import Search from '../containers/Search';
 
 const AppNavigator = createStackNavigator(
   {
-    StudentForm: {screen: StudentForm},
+    // StudentForm: {screen: StudentForm},
     Login: {
       screen: Login,
     },
