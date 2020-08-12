@@ -1,18 +1,24 @@
 {
-    "content": {
+    "form": {
+        "formName": "Student Registration Form",
         "body": [{
                 "_uid": "BUY6Drn9e1",
-                "component": "TextInput",
+                "componentType": "TextInput",
+                "componentData": {
+                    "fieldName": "Name",
+                    "placeholder": "Mg Mg",
+                    "fieldValue": "name"
+                },
                 "headline": "TextInput"
             },
             {
                 "_uid": "gJZoSLkfZV",
-                "component": "Button",
+                "componentType": "Buttons",
                 "title": "Button"
             },
             {
                 "_uid": "X1JAfdsZxy",
-                "component": "foo",
+                "componentType": "foo",
                 "headline": "Another headline"
             }
         ]

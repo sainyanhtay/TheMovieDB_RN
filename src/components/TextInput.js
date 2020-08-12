@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, ImageBackground, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {Input} from 'react-native-elements';
 
 class TextInput extends React.PureComponent {
   constructor(props) {
@@ -7,7 +8,15 @@ class TextInput extends React.PureComponent {
   }
 
   render() {
-    return <Text>check TextInput</Text>;
+    let {component, bindValue} = this.props;
+    console.log('check', component);
+    return (
+      <Input
+        label={component.componentData.fieldName}
+        placeholder={component.componentData.placeholder}
+        onChangeText={value => (bindValue = value)}
+      />
+    );
   }
 }
 
