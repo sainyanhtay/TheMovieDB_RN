@@ -16,7 +16,7 @@
                 "componentData": {
                     "fieldName": "Father Name",
                     "placeholder": "U Ba",
-                    "fieldValue": "name"
+                    "fieldValue": "fatherName"
                 }
             }, {
                 "_uid": "BUY6Drn9e3",
@@ -24,7 +24,7 @@
                 "componentData": {
                     "fieldName": "Postal Address",
                     "placeholder": "Yangon",
-                    "fieldValue": "name"
+                    "fieldValue": "postalAddress"
                 }
             }, {
                 "_uid": "BUY6Drn9e4",
@@ -32,7 +32,7 @@
                 "componentData": {
                     "fieldName": "Personal Address",
                     "placeholder": "Yangon",
-                    "fieldValue": "name"
+                    "fieldValue": "address"
                 }
             },
             {
@@ -72,9 +72,10 @@
                 }
             },
             {
-                "_uid": "X1JAfdsZxy",
+                "_uid": "a1JAfdsZxG",
                 "componentType": "foo",
-                "headline": "Another headline"
+                "headline": "Another headline",
+                "componentData": {}
             }
         ]
     }

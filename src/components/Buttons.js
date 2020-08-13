@@ -7,15 +7,13 @@ class Buttons extends React.PureComponent {
   }
 
   render() {
-    let {component} = this.props;
+    let {componentData} = this.props;
     return (
       <ThemeProvider>
         <Button
-          type={component.componentData.buttonType}
-          title={component.componentData.buttonName}
-          onPress={() =>
-            this.props.bindValue(component.componentData.buttonAction)
-          }
+          type={componentData.buttonType}
+          title={componentData.buttonName}
+          onPress={() => this.props.bindValue(componentData.buttonAction)}
         />
       </ThemeProvider>
     );

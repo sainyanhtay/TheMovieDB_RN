@@ -7,11 +7,12 @@ class TextInput extends React.PureComponent {
   }
 
   render() {
-    let {component} = this.props;
+    let {componentData} = this.props;
     return (
       <Input
-        label={component.componentData.fieldName}
-        placeholder={component.componentData.placeholder}
+        label={componentData.fieldName}
+        placeholder={componentData.placeholder}
+        value={this.props.state[componentData.fieldValue]}
         onChangeText={value => this.props.bindValue(value)}
       />
     );
