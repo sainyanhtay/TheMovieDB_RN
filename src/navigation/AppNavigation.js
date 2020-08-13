@@ -1,17 +1,17 @@
 import Login from '../containers/Login';
 import Home from '../containers/Home';
 import StudentForm from '../containers/StudentForm';
+import StudentList from '../containers/StudentList';
 import Profile from '../containers/Profile';
 import MovieDetail from '../containers/MovieDetail';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Search from '../containers/Search';
+import Search from '../containers/Search'; 
 
 const AppNavigator = createStackNavigator(
   {
-    // StudentForm: {screen: StudentForm},
     Login: {
       screen: Login,
     },
@@ -22,6 +22,7 @@ const AppNavigator = createStackNavigator(
           Home: {screen: Home},
           Search: {screen: Search},
           StudentForm: {screen: StudentForm},
+          StudentList: {screen: StudentList},
           Profile: {screen: Profile},
         },
         {
